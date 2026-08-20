@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v7
     - name: 💎 Get latest Ruby
       uses: ruby/setup-ruby@v1
       with:
@@ -21,7 +21,7 @@ jobs:
     - name: 📐 Build Site with Jekyll.
       run: JEKYLL_ENV=production bundle exec jekyll build
     - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      uses: SamKirkland/FTP-Deploy-Action@v4.4.0
       with:
         server: 145.14.156.150
         username: u442211421.kneadftp
