@@ -11,7 +11,11 @@
         {% endfor %}
       </ul>
     </div>
-    <form class="support-form" action="mailto:support@kneadbread.app" method="post" enctype="text/plain">
+    <form class="support-form" action="send-message.php" method="post">
+      <div class="field hp-field" aria-hidden="true">
+        <label for="k-website">Leave this field empty</label>
+        <input class="input" id="k-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
       <div class="field">
         <label for="k-email">Email</label>
         <input class="input" id="k-email" name="email" type="email" required placeholder="you@example.com">

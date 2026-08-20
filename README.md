@@ -45,4 +45,6 @@ Override any single instance inline with `--device-width`, `--frame-pad`, `--fra
 
 ## The support form
 
-Static export, so the form in `_includes/help.html` posts via `mailto:`. Point `action` at your own endpoint when you have one.
+The form in `_includes/help.html` posts to `send-message.php`, a dependency-free PHP handler at the site root that emails `support@kneadbread.app` and redirects to `thanks.html` on success (or back to `index.html#help` on any validation failure). Requires a host with PHP and a working `mail()` (most shared PHP hosts have this; if `mail()` is disabled or unreliable on your host, swap it for SMTP via your host's mailer). Jekyll doesn't process `.php` files, so `send-message.php` is copied into `_site/` verbatim on build — nothing else to wire up.
+
+The hidden `website` field in the form is a honeypot: real visitors never see or fill it (see `.hp-field` in `assets/css/site.css`), so any submission with it filled in is silently dropped as a bot.
