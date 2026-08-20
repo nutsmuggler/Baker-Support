@@ -23,7 +23,7 @@ a { color: var(--kicker-ink); text-underline-offset: 3px; }
 a:hover { color: var(--color-accent-800); }
 [hidden] { display: none !important; }
 em {
-  color: var(--color-accent-2-500);
+  color: var(--color-accent-2);
   font-family: var(--font-heading);
   font-style: normal;
 }
@@ -64,7 +64,7 @@ em {
 }
 
 .app-name {
-    color: var(--color-accent-2-500);
+    color: var(--color-accent);
 }
 
 /* ---- Page shell --------------------------------------------- */

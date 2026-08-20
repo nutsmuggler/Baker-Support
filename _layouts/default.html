@@ -9,9 +9,9 @@
 {% endif %}<link rel="icon" href="assets/knead-icon.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 1. design-system components  2. colors + fonts (edit this one)  3. page layout -->
-<link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="{{ page.theme | default: 'assets/css/theme.css' }}" id="theme-css">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/styles.css?v={{ site.time | date: '%s' }}">
+<link rel="stylesheet" href="{{ page.theme | default: 'assets/css/theme.css' }}?v={{ site.time | date: '%s' }}" id="theme-css">
+<link rel="stylesheet" href="assets/css/site.css?v={{ site.time | date: '%s' }}">
 </head>
 <body>
 
