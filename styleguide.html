@@ -1,0 +1,164 @@
+---
+layout: default
+title: Knead — Style guide
+description: Internal reference for the Knead design system. Not linked from the site.
+robots: noindex, nofollow
+---
+<style>
+  .styleguide-intro { max-width: 68ch; }
+  .specimen { padding: 22px 0; border-bottom: 1px solid var(--hairline); }
+  .specimen:last-child { border-bottom: none; }
+  .specimen-meta {
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    color: var(--muted-soft);
+    margin-bottom: 8px;
+  }
+  .specimen-meta code { font-family: ui-monospace, Menlo, monospace; }
+  .swatch-group { margin: 8px 0 40px; }
+  .swatch-group h3 { margin-bottom: 14px; }
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 12px;
+  }
+  .swatch {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .swatch-color { height: 60px; }
+  .swatch-label {
+    padding: 8px 10px;
+    background: var(--panel);
+    font-family: ui-monospace, Menlo, monospace;
+    font-size: 11px;
+    line-height: 1.4;
+    word-break: break-all;
+  }
+</style>
+
+<div class="section" style="max-width: 100%">
+  <span class="kicker">Internal — not linked from the site, excluded from search</span>
+  <h1 class="title">Style guide</h1>
+  <p class="lead lead--tight styleguide-intro">Typography and color pull live from <code>assets/css/theme.css</code> and <code>assets/css/site.css</code> via CSS custom properties — retune a value there and this page reflects it on reload, so it doubles as a check before touching the real pages.</p>
+
+  <h2 class="sub" style="margin-top: 40px; margin-bottom: 20px; font-size: 22px">Typography</h2>
+
+  <div class="specimen">
+    <div class="specimen-meta"><code>.display</code> — heading font, clamp(38px, 5.4vw, 66px)</div>
+    <p class="display" style="margin: 0">Bread takes time.</p>
+  </div>
+  <div class="specimen">
+    <div class="specimen-meta"><code>.title</code> — heading font, clamp(28px, 3.4vw, 42px)</div>
+    <p class="title" style="margin: 0">Bread is mostly waiting.</p>
+  </div>
+  <div class="specimen">
+    <div class="specimen-meta"><code>.title--sm</code> — heading font, clamp(26px, 3.2vw, 36px)</div>
+    <p class="title title--sm" style="margin: 0">Knead for iPhone and iPad</p>
+  </div>
+  <div class="specimen">
+    <div class="specimen-meta"><code>h3.sub</code> — heading font, 19px</div>
+    <h3 class="sub" style="margin: 0">Move the start, watch the day move</h3>
+  </div>
+  <div class="specimen">
+    <div class="specimen-meta"><code>h3.sub--sm</code> — heading font, 17.5px</div>
+    <h3 class="sub sub--sm" style="margin: 0">Search without leaving Knead</h3>
+  </div>
+  <div class="specimen">
+    <div class="specimen-meta"><code>.lead</code> — body font, 16.5px</div>
+    <p class="lead" style="margin: 0">Pick a start date and time and Knead walks the whole recipe forward — every feed, rise, fold and rest.</p>
+  </div>
+  <div class="specimen">
+    <div class="specimen-meta"><code>.body</code> — body font, 15.5px, muted</div>
+    <p class="body" style="margin: 0">Change the start date or time on the schedule and every step slides with it, right through to Ends at.</p>
+  </div>
+  <div class="specimen">
+    <div class="specimen-meta"><code>.fine</code> — body font, 13.5px, muted-soft</div>
+    <p class="fine" style="margin: 0">Free to try · subscribe to unlock scheduling</p>
+  </div>
+
+  <h2 class="sub" style="margin-top: 48px; margin-bottom: 20px; font-size: 22px">Color palette</h2>
+
+  <div class="swatch-group">
+    <h3 class="sub sub--sm">Base tokens</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-bg)"></div><div class="swatch-label">--color-bg</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-surface)"></div><div class="swatch-label">--color-surface</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-text)"></div><div class="swatch-label">--color-text</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent)"></div><div class="swatch-label">--color-accent</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2)"></div><div class="swatch-label">--color-accent-2</div></div>
+    </div>
+  </div>
+
+  <div class="swatch-group">
+    <h3 class="sub sub--sm">Neutral ramp</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-neutral-100)"></div><div class="swatch-label">--color-neutral-100</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-neutral-200)"></div><div class="swatch-label">--color-neutral-200</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-neutral-300)"></div><div class="swatch-label">--color-neutral-300</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-neutral-400)"></div><div class="swatch-label">--color-neutral-400</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-neutral-500)"></div><div class="swatch-label">--color-neutral-500</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-neutral-600)"></div><div class="swatch-label">--color-neutral-600</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-neutral-700)"></div><div class="swatch-label">--color-neutral-700</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-neutral-800)"></div><div class="swatch-label">--color-neutral-800</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-neutral-900)"></div><div class="swatch-label">--color-neutral-900</div></div>
+    </div>
+  </div>
+
+  <div class="swatch-group">
+    <h3 class="sub sub--sm">Accent ramp — terracotta</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-100)"></div><div class="swatch-label">--color-accent-100</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-200)"></div><div class="swatch-label">--color-accent-200</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-300)"></div><div class="swatch-label">--color-accent-300</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-400)"></div><div class="swatch-label">--color-accent-400</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-500)"></div><div class="swatch-label">--color-accent-500</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-600)"></div><div class="swatch-label">--color-accent-600</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-700)"></div><div class="swatch-label">--color-accent-700</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-800)"></div><div class="swatch-label">--color-accent-800</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-900)"></div><div class="swatch-label">--color-accent-900</div></div>
+    </div>
+  </div>
+
+  <div class="swatch-group">
+    <h3 class="sub sub--sm">Accent-2 ramp — sage</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2-100)"></div><div class="swatch-label">--color-accent-2-100</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2-200)"></div><div class="swatch-label">--color-accent-2-200</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2-300)"></div><div class="swatch-label">--color-accent-2-300</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2-400)"></div><div class="swatch-label">--color-accent-2-400</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2-500)"></div><div class="swatch-label">--color-accent-2-500</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2-600)"></div><div class="swatch-label">--color-accent-2-600</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2-700)"></div><div class="swatch-label">--color-accent-2-700</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2-800)"></div><div class="swatch-label">--color-accent-2-800</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--color-accent-2-900)"></div><div class="swatch-label">--color-accent-2-900</div></div>
+    </div>
+  </div>
+
+  <div class="swatch-group">
+    <h3 class="sub sub--sm">Page roles</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background: var(--band-sage)"></div><div class="swatch-label">--band-sage</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--band-terracotta)"></div><div class="swatch-label">--band-terracotta</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--panel)"></div><div class="swatch-label">--panel</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--kicker-ink)"></div><div class="swatch-label">--kicker-ink</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--muted)"></div><div class="swatch-label">--muted</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--muted-soft)"></div><div class="swatch-label">--muted-soft</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--hairline)"></div><div class="swatch-label">--hairline</div></div>
+    </div>
+  </div>
+
+  <div class="swatch-group">
+    <h3 class="sub sub--sm">Timeline &amp; device frame</h3>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background: var(--time-hands-on)"></div><div class="swatch-label">--time-hands-on</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--time-waiting)"></div><div class="swatch-label">--time-waiting</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--time-waiting-soft)"></div><div class="swatch-label">--time-waiting-soft</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--device-shell)"></div><div class="swatch-label">--device-shell</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--device-key)"></div><div class="swatch-label">--device-key</div></div>
+      <div class="swatch"><div class="swatch-color" style="background: var(--device-shell)"><div class="swatch-color" style="background: var(--device-edge); height: 100%"></div></div><div class="swatch-label">--device-edge (on shell)</div></div>
+    </div>
+  </div>
+</div>
