@@ -67,6 +67,15 @@ em {
     color: var(--color-accent);
 }
 
+a .app-name {
+    color: var(--color-accent-2);
+}
+a .app-name-suffix {
+    color: var(--color-text);
+}
+a .app-name:hover, a .app-name-suffix:hover {
+    color: var(--color-accent) !important;
+}
 /* ---- Page shell --------------------------------------------- */
 .shell { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 24px); }
 .section { padding: 8px 0 80px; scroll-margin-top: 84px; }
