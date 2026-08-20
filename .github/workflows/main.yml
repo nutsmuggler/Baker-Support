@@ -1,0 +1,31 @@
+name: 🚀 Deploy website on push
+on:
+  push:
+    tags:
+      - "*"
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    - name: 💎 Get latest Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.3'
+    - name: ⚙️ Setup Environment.
+      run: |
+        gem install jekyll bundler
+        bundle install
+    - name: 📐 Build Site with Jekyll.
+      run: JEKYLL_ENV=production bundle exec jekyll build
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      with:
+        server: 145.14.156.150
+        username: u442211421.kneadftp
+        password: ${{ secrets.ftp_password }}
+        local-dir: ./_site/
+        server-dir: /home/u442211421/domains/kneadbread.app/public_html/
+        dangerous-clean-slate: false
