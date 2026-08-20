@@ -60,7 +60,7 @@ a:hover { color: var(--color-accent-800); }
 }
 
 .app-name {
-    color: var(--color-accent);
+    color: var(--color-accent-2-500);
 }
 
 /* ---- Page shell --------------------------------------------- */
@@ -140,7 +140,7 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
   width: min(400px, 44vw);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: var(--color-accent-2-200);
+  background: var(--color-accent-2-500);
   z-index: -1;
   pointer-events: none;
 }

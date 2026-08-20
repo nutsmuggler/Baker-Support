@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- 1. design-system components  2. colors + fonts (edit this one)  3. page layout -->
 <link rel="stylesheet" href="assets/css/styles.css">
-<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="{{ page.theme | default: 'assets/css/theme.css' }}" id="theme-css">
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>

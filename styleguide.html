@@ -37,12 +37,57 @@ robots: noindex, nofollow
     line-height: 1.4;
     word-break: break-all;
   }
+  .palette-picker {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 24px 0 8px;
+    padding: 16px 18px;
+    background: var(--panel);
+    border-radius: var(--radius-md);
+  }
+  .palette-picker label {
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: color-mix(in srgb, var(--color-text) 72%, transparent);
+  }
+  .palette-picker select {
+    font: inherit;
+    font-family: var(--font-body);
+    font-size: 15px;
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--hairline);
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+  .palette-dots { display: flex; gap: 6px; }
+  .palette-dot { width: 18px; height: 18px; border-radius: 50%; box-shadow: var(--shadow-sm); }
 </style>
 
 <div class="section" style="max-width: 100%">
   <span class="kicker">Internal — not linked from the site, excluded from search</span>
   <h1 class="title">Style guide</h1>
   <p class="lead lead--tight styleguide-intro">Typography and color pull live from <code>assets/css/theme.css</code> and <code>assets/css/site.css</code> via CSS custom properties — retune a value there and this page reflects it on reload, so it doubles as a check before touching the real pages.</p>
+
+  <div class="palette-picker">
+    <label for="palette-select">Preview palette</label>
+    <select id="palette-select">
+      <option value="assets/css/theme.css" data-primary="#d4a017" data-secondary="#3f6b4a">Current — Golden Wheat &amp; Forest</option>
+      {% for p in site.data.palettes %}
+      <option value="assets/css/themes/{{ p.slug }}.css" data-primary="{{ p.primary }}" data-secondary="{{ p.secondary }}">{{ p.name }}</option>
+      {% endfor %}
+    </select>
+    <span class="palette-dots">
+      <span class="palette-dot" id="palette-dot-primary"></span>
+      <span class="palette-dot" id="palette-dot-secondary"></span>
+    </span>
+  </div>
+  <p class="fine" style="margin-bottom: 40px">Swaps the stylesheet in place — nothing is saved. Reload to go back to the live theme, or edit the <code>href</code> in <code>_layouts/default.html</code> to make a palette permanent.</p>
 
   <h2 class="sub" style="margin-top: 40px; margin-bottom: 20px; font-size: 22px">Typography</h2>
 
@@ -162,3 +207,24 @@ robots: noindex, nofollow
     </div>
   </div>
 </div>
+
+<script>
+  // Internal preview only: swaps the theme stylesheet's href so this page can
+  // be used to compare palettes live. The rest of the site stays JS-free.
+  (function () {
+    var select = document.getElementById('palette-select');
+    var themeLink = document.getElementById('theme-css');
+    var dotPrimary = document.getElementById('palette-dot-primary');
+    var dotSecondary = document.getElementById('palette-dot-secondary');
+
+    function applySelected() {
+      var opt = select.options[select.selectedIndex];
+      themeLink.href = opt.value;
+      dotPrimary.style.background = opt.dataset.primary;
+      dotSecondary.style.background = opt.dataset.secondary;
+    }
+
+    select.addEventListener('change', applySelected);
+    applySelected();
+  })();
+</script>

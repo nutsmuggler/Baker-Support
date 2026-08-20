@@ -1,0 +1,40 @@
+- slug: marigold-denim
+  name: "Marigold & Denim"
+  primary: "#e8973a"
+  secondary: "#4a6fa5"
+- slug: honey-teal
+  name: "Honey & Teal"
+  primary: "#d9a125"
+  secondary: "#2f8f86"
+- slug: paprika-indigo
+  name: "Paprika & Indigo"
+  primary: "#c8501f"
+  secondary: "#4b4e9e"
+- slug: saffron-slate
+  name: "Saffron & Slate"
+  primary: "#e6a825"
+  secondary: "#57708a"
+- slug: pumpkin-sage
+  name: "Pumpkin & Deep Sage"
+  primary: "#d9762b"
+  secondary: "#6b8067"
+- slug: mustard-plum
+  name: "Mustard & Plum"
+  primary: "#c99a2e"
+  secondary: "#6b5b8a"
+- slug: amber-seafoam
+  name: "Amber & Seafoam"
+  primary: "#d98e1b"
+  secondary: "#3f9b86"
+- slug: cinnamon-cornflower
+  name: "Cinnamon & Cornflower"
+  primary: "#b5651d"
+  secondary: "#5b7fbf"
+- slug: goldenwheat-forest
+  name: "Golden Wheat & Forest"
+  primary: "#d4a017"
+  secondary: "#3f6b4a"
+- slug: rust-steel
+  name: "Rust & Steel"
+  primary: "#b8541f"
+  secondary: "#4e7a93"
