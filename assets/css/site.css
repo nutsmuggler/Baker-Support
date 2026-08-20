@@ -59,6 +59,10 @@ a:hover { color: var(--color-accent-800); }
   color: var(--color-bg);
 }
 
+.app-name {
+    color: var(--color-accent);
+}
+
 /* ---- Page shell --------------------------------------------- */
 .shell { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 24px); }
 .section { padding: 8px 0 80px; scroll-margin-top: 84px; }
@@ -83,7 +87,6 @@ a:hover { color: var(--color-accent-800); }
   font-size: clamp(38px, 5.4vw, 66px);
   line-height: 1.08;
 }
-.display span { display: block; }
 .title {
   margin: 0 0 20px;
   max-width: 26ch;
