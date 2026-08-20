@@ -1,0 +1,11 @@
+title: Knead — support
+description: >-
+  Support for Knead, a baking companion for iPhone and iPad: scheduling,
+  step-by-step guidance, importing recipes, the Diary, and how to reach us.
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor

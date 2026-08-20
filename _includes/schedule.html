@@ -1,0 +1,53 @@
+<!-- Scheduling -->
+<section class="section section--schedule" id="schedule">
+  <span class="kicker">Scheduling</span>
+  <h2 class="title">Bread is mostly waiting. The schedule shows you when it isn't.</h2>
+  <p class="lead">Pick a start date and time and Knead walks the whole recipe forward — every feed, rise, fold and rest — then tells you when the loaf comes out. Before you commit an afternoon, you can see which hours the dough will actually want you.</p>
+
+  <div class="panel">
+    <div class="schedule-head">
+      <div>
+        <h3>Country sourdough — started Saturday, 8:00 pm</h3>
+        <p>Ends Sunday, 5:43 pm · 21 h 43 m end to end · 1 h 25 m of it hands on, none of it after 11 pm</p>
+      </div>
+      <div class="legend">
+        <span><i class="hands-on"></i>Hands on</span>
+        <span><i class="waiting"></i>Dough working, you're free</span>
+      </div>
+    </div>
+
+    <div class="timeline-scroll">
+      <div class="timeline">
+        {% for track in site.data.schedule %}
+        <div class="track">
+          <span class="track-time">{{ track.time }}</span>
+          <div class="track-bar{% if track.bar != 'plain' %} track-bar--{{ track.bar }}{% endif %}">{% if track.bar == 'folds' %}<i></i><i></i><i></i>{% endif %}</div>
+          <span class="track-label{% if track.hands_on %} track-label--hands-on{% endif %}">{{ track.label }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="split" style="margin-top: 64px">
+    <figure class="device-single device-single--right">
+      <div class="device device--tablet">
+        <img class="screen washed" src="assets/ipad-schedule.png" alt="The Baking Schedule screen on iPad, with steps grouped by day">
+      </div>
+    </figure>
+    <div class="stack">
+      <div>
+        <h3 class="sub">Move the start, watch the day move</h3>
+        <p class="body">Change the start date or time on the schedule and every step slides with it, right through to <em>Ends at</em>. Tap Expand all to read the full instruction behind each timing.</p>
+      </div>
+      <div>
+        <h3 class="sub">Grouped by Today and Tomorrow</h3>
+        <p class="body">Long bakes cross midnight, so the schedule is split by day rather than by hour count. A 2:34 am fold is easier to notice — and to plan away from — when it's sitting under Tomorrow.</p>
+      </div>
+      <div>
+        <h3 class="sub">Alarms carry the waiting</h3>
+        <p class="body">During a bake, each timed step offers Set Alarm for exactly its duration. If a reminder never sounded, allow notifications for Knead in Settings — that's the culprit nine times out of ten, not the starter.</p>
+      </div>
+    </div>
+  </div>
+</section>

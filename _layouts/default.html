@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title | default: site.title }}</title>
+<meta name="description" content="{{ page.description | default: site.description }}">
+<link rel="icon" href="assets/knead-icon.png">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 1. design-system components  2. colors + fonts (edit this one)  3. page layout -->
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/theme.css">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+
+{% include nav.html %}
+
+<div class="shell">
+{{ content }}
+</div>
+
+</body>
+</html>

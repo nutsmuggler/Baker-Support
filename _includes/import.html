@@ -1,0 +1,19 @@
+<!-- Importing -->
+<section class="section" id="import">
+  <div class="band band--sage">
+    <span class="kicker kicker--sage">Importing recipes</span>
+    <h2 class="title title--sm">Getting a recipe off the web and into your library</h2>
+    <p class="lead lead--tight">Knead reads the ingredients, the method and the durations hiding in the prose — "rest 45 minutes" becomes a step the schedule can place.</p>
+    <div class="grid-steps">
+      {% for step in site.data.import_steps %}
+      <div class="stack stack--sm">
+        <span class="step-num{% if step.accent %} step-num--accent{% endif %}">{{ step.number }}</span>
+        <h3 class="sub sub--sm">{{ step.heading }}</h3>
+        {% for paragraph in step.body %}
+        <p class="body body--sm">{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

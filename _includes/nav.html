@@ -1,0 +1,11 @@
+<nav class="nav site-nav">
+  <span class="nav-brand">
+    <img src="assets/knead-icon.png" alt="Knead app icon">
+    Knead
+  </span>
+  <div class="nav-links">
+    {% for item in site.data.nav %}
+    <a{% if item.secondary %} data-secondary{% endif %}{% if item.primary %} class="btn btn-primary"{% endif %} href="{{ item.href }}">{{ item.label }}</a>
+    {% endfor %}
+  </div>
+</nav>

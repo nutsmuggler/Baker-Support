@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <span>Knead — a baking companion for iPhone and iPad</span>
+  <div>
+    {% for link in site.data.footer_links %}
+    <a href="{{ link.href }}">{{ link.label }}</a>
+    {% endfor %}
+  </div>
+</footer>

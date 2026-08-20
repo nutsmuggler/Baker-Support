@@ -1,0 +1,28 @@
+- time: Sat 8:00 pm
+  bar: hands-on
+  label: "Feed starter<br>10 m"
+  hands_on: true
+- time: Sat 8:10 pm
+  bar: plain
+  label: "Starter ripens · 12 h<br>Overnight, while you sleep"
+  hands_on: false
+- time: Sun 8:10 am
+  bar: hands-on
+  label: "Mix<br>20 m"
+  hands_on: true
+- time: Sun 8:30 am
+  bar: folds
+  label: "Rise until doubled · 4 h<br><em>3 folds, 2 minutes each</em>"
+  hands_on: false
+- time: Sun 12:30 pm
+  bar: hands-on
+  label: "Shape<br>15 m"
+  hands_on: true
+- time: Sun 12:45 pm
+  bar: waiting-soft
+  label: "Cold proof in the fridge · 4 h 8 m<br>Nothing asked of you"
+  hands_on: false
+- time: Sun 4:53 pm
+  bar: hands-on
+  label: "Bake<br>50 m"
+  hands_on: true

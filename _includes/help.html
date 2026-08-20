@@ -1,0 +1,26 @@
+<!-- Help -->
+<section class="section section--last" id="help">
+  <div class="band band--terracotta split split--help">
+    <div>
+      <h2 class="title title--sm" style="max-width: 20ch; font-size: clamp(26px, 3vw, 34px); line-height: 1.18; margin-bottom: 16px">Get in touch!</h2>
+      <p class="lead lead--tight" style="max-width: 44ch; margin-bottom: 26px">Expect a reply within two working days, usually sooner. Prefer mail? <a href="mailto:support@kneadbread.app?subject=Knead%20support">support@kneadbread.app</a> reaches the same two people.</p>
+      <h3 class="sub sub--sm" style="margin-bottom: 14px; font-size: 16.5px">What helps us answer in one reply</h3>
+      <ul class="checklist">
+        {% for item in site.data.help_checklist %}
+        <li>{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <form class="support-form" action="mailto:support@kneadbread.app" method="post" enctype="text/plain">
+      <div class="field">
+        <label for="k-email">Email</label>
+        <input class="input" id="k-email" name="email" type="email" required placeholder="you@example.com">
+      </div>
+      <div class="field">
+        <label for="k-message">Tell us what happened</label>
+        <textarea class="input" id="k-message" name="message" rows="5" required placeholder="Device, app version, and what the dough — or the app — did instead."></textarea>
+      </div>
+      <button class="btn btn-primary" type="submit">Send it over</button>
+    </form>
+  </div>
+</section>

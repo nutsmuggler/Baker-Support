@@ -1,0 +1,18 @@
+- label: Scheduling
+  href: "#schedule"
+  secondary: true
+- label: Step by step
+  href: "#guide"
+  secondary: true
+- label: Importing
+  href: "#import"
+  secondary: true
+- label: Diary
+  href: "#diary"
+  secondary: true
+- label: Download
+  href: "#download"
+  secondary: true
+- label: Get help
+  href: "#help"
+  primary: true

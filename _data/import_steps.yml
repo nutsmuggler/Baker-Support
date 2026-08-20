@@ -1,0 +1,22 @@
+- number: "1"
+  heading: Search without leaving Knead
+  body:
+    - Type what you want to bake into Knead's own search and open the results in the in-app browser. When you land on the recipe, Import pulls it straight into your library — no share sheet, no copying links.
+- number: "2"
+  heading: Share the page to Knead
+  body:
+    - In Safari, tap Share and choose Knead. This works better than pasting a link, because some sites only reveal the recipe once the page has loaded in a browser.
+- number: "3"
+  heading: Or insert manually
+  body:
+    - "Cookbook photographed, blog behind a login, family card in a drawer: copy or type the ingredients and method into the paste field and Knead parses it the same way."
+- number: "4"
+  heading: Verify the timings once
+  body:
+    - Open the recipe and look down the steps.
+    - Knead uses Apple Intelligence to set a duration, but of course you can correct or adjust it; the schedule redraws around it and your edit stays with the recipe for good.
+- number: "?"
+  accent: true
+  heading: If a site never works
+  body:
+    - Send us the link below. Import trouble is almost always one site's markup, and we fix them one site at a time — usually within a release or two.
