@@ -79,7 +79,7 @@ a .app-name:hover, a .app-name-suffix:hover {
 /* ---- Page shell --------------------------------------------- */
 .shell { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 24px); }
 .section { padding: 8px 0 80px; scroll-margin-top: 84px; }
-.section--first { padding: clamp(44px, 6vw, 84px) 0 32px; }
+.section--first { padding: clamp(8px, 1.2vw, 18px) 0 32px; }
 .section--schedule { padding-top: 24px; }
 .section--last { padding-bottom: 88px; }
 
@@ -135,21 +135,32 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
   --color-text: #fff;
   color: #fff;
 }
+.split--hero .device-single {
+  align-self: end;
+}
+.split--hero .device-single .device {
+  height: calc(var(--device-width) * 1.6);
+  overflow: hidden;
+}
 .hero-band {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
+  /* Pinned so the wave's cut points keep landing at the same absolute height regardless of
+     how tall the phone inside happens to be. */
+  min-height: 400px;
   /* One sinusoid, two bulges: a trough under the headline (left), a crest above the phones (right).
      Clipped here (the full-bleed band) rather than per-element, so the photo and the phones
      share one coordinate space and are cut by the exact same line. */
   clip-path: polygon(
     0% 0%, 100% 0%,
-    100% 86%, 95% 83%, 90% 81%, 85% 79%, 80% 78%, 75% 78%, 70% 78%, 65% 79%,
-    60% 81%, 55% 83%, 50% 86%, 45% 88%, 40% 90%, 35% 93%, 30% 94%, 25% 96%,
-    20% 96%, 15% 96%, 10% 95%, 5% 93%, 0% 91%
+    100% 77%, 95% 75%, 90% 74%, 85% 73%, 80% 72%, 75% 72%, 70% 72%, 65% 73%,
+    60% 75%, 55% 78%, 50% 80%, 45% 83%, 40% 85%, 35% 86%, 30% 87%, 25% 88%,
+    20% 88%, 15% 88%, 10% 88%, 5% 87%, 0% 86%
   );
 }
+.split--schedule-head { margin-bottom: -140px; }
 .split--download { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 44px clamp(32px, 6vw, 80px); }
 .split--help {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -194,6 +205,7 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
 .band--sage { background: var(--band-sage); }
 .band--terracotta { background: var(--band-terracotta); padding: clamp(28px, 4vw, 52px); }
 .panel {
+  position: relative;
   background: var(--panel);
   border-radius: var(--radius-lg);
   padding: clamp(22px, 3vw, 34px);
