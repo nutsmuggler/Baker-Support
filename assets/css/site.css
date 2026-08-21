@@ -408,20 +408,8 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
 
 /* ---- Download ----------------------------------------------- */
 .store-row { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
-.store-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 26px;
-  border-radius: var(--radius-pill);
-  background: var(--color-text);
-  color: var(--color-bg);
-  text-decoration: none;
-}
-.store-btn:hover { color: var(--color-bg); background: var(--color-neutral-800); }
-.store-btn span { display: flex; flex-direction: column; line-height: 1.25; }
-.store-btn .store-kicker { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.8; }
-.store-btn .store-name { font-family: var(--font-heading); font-size: 17px; }
+.appstore-badge { display: inline-flex; line-height: 0; }
+.appstore-badge img { display: block; height: 48px; width: auto; }
 
 /* ---- Help --------------------------------------------------- */
 .checklist {
