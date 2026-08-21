@@ -226,7 +226,7 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
   background: var(--color-accent);
   z-index: -1;
   pointer-events: none;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 .hero-bg {
   position: absolute;

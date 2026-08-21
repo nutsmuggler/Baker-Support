@@ -51,7 +51,7 @@
   --band-sage: var(--color-accent-2-400);      /* "Importing" band */
   --band-terracotta: var(--color-accent-100);  /* "Get help" band  */
   --panel: var(--color-neutral-100);           /* cards, form      */
-  --kicker-ink: var(--color-accent-700);       /* small caps label */
+  --kicker-ink: var(--color-accent-500);       /* small caps label */
   --muted: color-mix(in srgb, var(--color-text) 80%, transparent);
   --muted-soft: color-mix(in srgb, var(--color-text) 68%, transparent);
   --hairline: color-mix(in srgb, var(--color-text) 16%, transparent);
