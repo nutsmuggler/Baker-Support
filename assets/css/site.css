@@ -152,13 +152,28 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
   min-height: 400px;
   /* One sinusoid, two bulges: a trough under the headline (left), a crest above the phones (right).
      Clipped here (the full-bleed band) rather than per-element, so the photo and the phones
-     share one coordinate space and are cut by the exact same line. */
+     share one coordinate space and are cut by the exact same line.
+     Polygon fallback for browsers without clip-path: shape() support (see @supports below). */
   clip-path: polygon(
     0% 0%, 100% 0%,
     100% 77%, 95% 75%, 90% 74%, 85% 73%, 80% 72%, 75% 72%, 70% 72%, 65% 73%,
     60% 75%, 55% 78%, 50% 80%, 45% 83%, 40% 85%, 35% 86%, 30% 87%, 25% 88%,
     20% 88%, 15% 88%, 10% 88%, 5% 87%, 0% 86%
   );
+}
+@supports (clip-path: shape(from 0 0, line to 100% 0)) {
+  .hero-band {
+    /* Same wave, but as two real cubic-bezier curves instead of a many-point polygon —
+       no faceting, genuinely smooth. */
+    clip-path: shape(
+      from 0% 0%,
+      line to 100% 0%,
+      line to 100% 77%,
+      curve to 50% 80% with 85% 68% / 65% 72%,
+      curve to 0% 86% with 35% 90% / 15% 90%,
+      close
+    );
+  }
 }
 .split--schedule-head { margin-bottom: -140px; }
 .split--download { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 44px clamp(32px, 6vw, 80px); }
