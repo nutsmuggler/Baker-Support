@@ -80,7 +80,7 @@ a .app-name:hover, a .app-name-suffix:hover {
 .shell { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 24px); }
 .section { padding: 8px 0 80px; scroll-margin-top: 84px; }
 .section--first { padding: clamp(8px, 1.2vw, 18px) 0 32px; }
-.section--schedule { padding-top: 24px; }
+.section--schedule { padding-top: 0; }
 .section--last { padding-bottom: 88px; }
 
 /* ---- Text ---------------------------------------------------- */
@@ -182,8 +182,8 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
   .hero-band {
     clip-path: polygon(
       0% 0%, 100% 0%,
-      100% 86%, 90% 83%, 80% 80%, 70% 78%, 60% 76%, 50% 76%, 40% 76%, 30% 78%,
-      20% 80%, 10% 83%, 0% 86%
+      100% 84%, 90% 82.5%, 80% 81%, 70% 80%, 60% 79.5%, 50% 79.5%, 40% 79.5%, 30% 80%,
+      20% 81%, 10% 82.5%, 0% 84%
     );
   }
   @supports (clip-path: shape(from 0 0, line to 100% 0)) {
@@ -191,9 +191,9 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
       clip-path: shape(
         from 0% 0%,
         line to 100% 0%,
-        line to 100% 86%,
-        curve to 50% 76% with 85% 81% / 62% 76%,
-        curve to 0% 86% with 38% 76% / 15% 81%,
+        line to 100% 84%,
+        curve to 50% 79.5% with 85% 81.5% / 62% 79.5%,
+        curve to 0% 84% with 38% 79.5% / 15% 81.5%,
         close
       );
     }
@@ -348,6 +348,12 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
 .device-single--right { order: 2; }
 
 /* ---- Schedule timeline -------------------------------------- */
+
+.split--schedule-head .device {
+  height: calc(var(--device-width) * 1.7);
+  overflow: hidden;
+}
+
 .schedule-head {
   display: flex;
   gap: 16px 28px;
