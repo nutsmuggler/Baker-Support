@@ -79,7 +79,7 @@ a .app-name:hover, a .app-name-suffix:hover {
 /* ---- Page shell --------------------------------------------- */
 .shell { max-width: 1120px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 24px); }
 .section { padding: 8px 0 80px; scroll-margin-top: 84px; }
-.section--first { padding: clamp(44px, 6vw, 84px) 0 64px; }
+.section--first { padding: clamp(44px, 6vw, 84px) 0 32px; }
 .section--schedule { padding-top: 24px; }
 .section--last { padding-bottom: 88px; }
 
@@ -132,9 +132,23 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
 }
 .split--hero {
   gap: 48px clamp(32px, 6vw, 88px);
-  position: relative;
   --color-text: #fff;
   color: #fff;
+}
+.hero-band {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  /* One sinusoid, two bulges: a trough under the headline (left), a crest above the phones (right).
+     Clipped here (the full-bleed band) rather than per-element, so the photo and the phones
+     share one coordinate space and are cut by the exact same line. */
+  clip-path: polygon(
+    0% 0%, 100% 0%,
+    100% 86%, 95% 83%, 90% 81%, 85% 79%, 80% 78%, 75% 78%, 70% 78%, 65% 79%,
+    60% 81%, 55% 83%, 50% 86%, 45% 88%, 40% 90%, 35% 93%, 30% 94%, 25% 96%,
+    20% 96%, 15% 96%, 10% 95%, 5% 93%, 0% 91%
+  );
 }
 .split--download { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 44px clamp(32px, 6vw, 80px); }
 .split--help {
@@ -166,15 +180,12 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
 }
 .hero-bg {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 100vw;
-  transform: translateX(-50%);
+  inset: 0;
   z-index: -1;
   pointer-events: none;
+  clip-path: var(--hero-cut);
   background:
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.45) 35%, rgba(0, 0, 0, 0.15) 60%, var(--color-bg) 100%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.45) 35%, rgba(0, 0, 0, 0.1) 70%, transparent 100%),
     url('../knead-hero.jpg') top center / cover no-repeat;
 }
 
