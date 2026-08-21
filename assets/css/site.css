@@ -175,6 +175,30 @@ h3.sub--sm { margin: 0; font-size: 17.5px; }
     );
   }
 }
+@media (max-width: 700px) {
+  /* Below the breakpoint where .split stacks the text and phone into one column, the
+     left-trough/right-crest wave no longer lines up with anything — swap it for a single,
+     centered upward bulge instead. */
+  .hero-band {
+    clip-path: polygon(
+      0% 0%, 100% 0%,
+      100% 86%, 90% 83%, 80% 80%, 70% 78%, 60% 76%, 50% 76%, 40% 76%, 30% 78%,
+      20% 80%, 10% 83%, 0% 86%
+    );
+  }
+  @supports (clip-path: shape(from 0 0, line to 100% 0)) {
+    .hero-band {
+      clip-path: shape(
+        from 0% 0%,
+        line to 100% 0%,
+        line to 100% 86%,
+        curve to 50% 76% with 85% 81% / 62% 76%,
+        curve to 0% 86% with 38% 76% / 15% 81%,
+        close
+      );
+    }
+  }
+}
 .split--schedule-head { margin-bottom: -140px; }
 .split--download { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 44px clamp(32px, 6vw, 80px); }
 .split--help {
